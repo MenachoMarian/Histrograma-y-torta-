@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Torta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="bg-dark py-5">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xs-12">
+            <table id="tabla3" class="table table-dark">
+              <thead>
+                <tr>
+                  <th>Mesas</th>
+                  <th>Candidato A</th>
+                  <th>Candidato B</th>
+                  <th>Votos blancos</th>
+                  <th>Votos nulos</th>
+                </tr>
+              </thead>
+              <tbody id="torta3">
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+           <canvas id="mitorta3"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="tortap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      var olddata = [0,0,0,0];
+
+      var ctx = document.getElementById('mitorta3').getContext('2d');
+      var charttorta3 = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Candidato A', 'Candidato B','Votos blancos','Votos nulos'],
+        datasets: [{
+            label: 'Resultado total',
+            backgroundColor: ["#FFCC99","#EFED99","#FF00CA","#2DECEC"],
+            borderColor: "black",
+            borderWidth: 2,
+            data: olddata,
+        }]
+    },
+    options: {}
+  });
+    </script>
+
+    <script type="text/javascript">
+    function getTorta3(cana,canb,votbl,votnu)
+    {
+      console.log(cana,canb,votbl,votnu);
+      charttorta3.data.datasets[0].data= [cana,canb,votbl,votnu];
+      //chart.data.datasets[0].label= 'Resultado mesa: '+mesa;
+      //chart.data.datasets[0].label= [];
+      charttorta3.update();
+        };
+  </script>
+  </body>
+</html>

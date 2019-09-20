@@ -1,0 +1,23 @@
+[
+  {
+    "Mesa":"1",
+    "Candidato_A": "25",
+    "Candidato_B": "35",
+    "Votos_blancos": "45",
+    "Votos_nulos":"15"
+  },
+  {
+    "Mesa":"2",
+    "Candidato_A": "60",
+    "Candidato_B": "12",
+    "Votos_blancos": "56",
+    "Votos_nulos":"45"
+  },
+  {
+    "Mesa":"45",
+    "Candidato_A": "96",
+    "Candidato_B": "45",
+    "Votos_blancos": "12",
+    "Votos_nulos":"89"
+  }
+]
